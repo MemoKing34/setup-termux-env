@@ -23,6 +23,13 @@ wget
 echo 'DONE'
 #sleep 2
 
+#Install ngrok
+echo 'INSTALLING NGROK'
+git clone https://github.com/Yisus7u7/termux-ngrok.git -q
+bash termux-ngrok/install.sh
+echo 'DONE'
+
+
 #Some Extra Packages That May Come In Handy Later
 # binutils clang emacs fd figlet file fish fortune fsmon fzf gh hexedit
 # htop jq leveldb links lld llvm lz4 lzip mc micro ncdu nmap openssh p7zip
