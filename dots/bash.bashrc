@@ -18,6 +18,7 @@ alias diff='diff --color=always'
 alias ls='ls -Ap --color=always'
 alias less='less -RNs --use-color'
 alias grep='grep --color=always'
+alias jobs='jobs -l'
 
 #Some Exports
 export EDITOR='nano'
@@ -52,8 +53,8 @@ ex ()
   fi
 }
 
-#Clear The Screen
-clear
+#Don't clear The Screen
+#clear
 
 #Launch Neofetch
 neofetch
