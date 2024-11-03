@@ -7,11 +7,11 @@ export PLUGINS=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins
 
 
 echo 'Installing powerlevel10k'
-if [[test -d "$THEMES/powerlevel10k"]]; then
+if [[ $(test -d $THEMES/powerlevel10k) ]]; then
+    echo 'Powerlevel10k already installed!'
+else
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $THEMES/powerlevel10k
     echo 'Powerlevel10k installed'
-else
-    echo 'Powerlevel10k already installed!'
 fi
 echo 'Setting p10k dotfiles'
 touch ~/.zshrc ~/.p10k.zsh
