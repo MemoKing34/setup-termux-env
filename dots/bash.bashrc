@@ -56,5 +56,5 @@ ex ()
 #Don't clear The Screen
 #clear
 
-#Launch Neofetch
-neofetch
+#Launch Fastfetch
+fastfetch

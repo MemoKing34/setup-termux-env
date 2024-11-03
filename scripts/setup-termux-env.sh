@@ -13,13 +13,7 @@ echo 'DONE'
 #Install Our Packages
 #Bare Minimum List
 echo 'INSTALLING NECESSARY PACKAGES...'
-apt install -qqy --no-install-recommends \
-bash-completion \
-linux-man-pages \
-man \
-neofetch \
-texinfo \
-wget 
+apt install -qqy --no-install-recommends bash-completion linux-man-pages man neofetch fastfetch texinfo wget zsh vim termux-api figlet which
 echo 'DONE'
 #sleep 2
 
@@ -28,6 +22,15 @@ echo 'INSTALLING NGROK'
 git clone https://github.com/Yisus7u7/termux-ngrok.git -q
 bash termux-ngrok/install.sh
 echo 'DONE'
+
+
+#Set zsh and oh-my-zsh
+echo 'INSTALLING ZSH AND OH MY ZSH!'
+bash scripts/setup-z.sh
+echo 'DONE'
+
+
+
 
 
 #Some Extra Packages That May Come In Handy Later
