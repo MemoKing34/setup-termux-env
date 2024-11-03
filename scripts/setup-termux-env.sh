@@ -13,7 +13,7 @@ echo 'DONE'
 #Install Our Packages
 #Bare Minimum List
 echo 'INSTALLING NECESSARY PACKAGES...'
-apt install -qqy --no-install-recommends bash-completion linux-man-pages man neofetch fastfetch texinfo wget zsh vim termux-api figlet which
+apt install -qqy --no-install-recommends bash-completion linux-man-pages man neofetch fastfetch texinfo wget zsh vim termux-api figlet which ncurses-utils
 echo 'DONE'
 #sleep 2
 
