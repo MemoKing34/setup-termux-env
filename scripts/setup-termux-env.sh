@@ -87,6 +87,5 @@ if [ "$(basename -- "$SHELL")" != "zsh" ]; then
     echo 'SWITHING TO ZSH'
     zsh
 else
-    echo 'RUNNING .zshrc'
-    source ~/.zshrc
+    echo 'RUN  source ~/.zshrc to apply changes'
 fi

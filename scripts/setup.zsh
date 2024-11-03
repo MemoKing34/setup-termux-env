@@ -1,5 +1,7 @@
 test -d .oh-my-zsh || rm -rf .oh-my-zsh || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-chsh -s zsh
+if [ "$(basename -- "$SHELL")" != "zsh" ]; then
+    chsh -s zsh
+fi
 
 
 export THEMES=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes
@@ -15,8 +17,13 @@ else
 fi
 echo 'Setting p10k dotfiles'
 touch ~/.zshrc ~/.p10k.zsh
-cp -rf dots/.zshrc ~/.zshrc
-cp -rf dots/.p10k.zsh ~/.p10k.zsh
+if [[ $(test -d dots) ]]; then
+    cp -rf dots/.zshrc ~/.zshrc
+    cp -rf dots/.p10k.zsh ~/.p10k.zsh
+else
+    curl -fsSL https://raw.githubusercontent.com/MemoKing34/setup-termux-env/refs/heads/master/dots/.zshrc -o ~/.zshrc
+    curl -fsSL https://raw.githubusercontent.com/MemoKing34/setup-termux-env/refs/heads/master/dots/.p10k.zsh -o ~/.p10k.zsh
+fi
 
 
 
