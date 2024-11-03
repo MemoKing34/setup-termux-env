@@ -26,7 +26,7 @@ echo 'DONE'
 
 #Set zsh and oh-my-zsh
 echo 'INSTALLING ZSH AND OH MY ZSH!'
-bash scripts/setup-z.sh
+bash scripts/setup.zsh
 echo 'DONE'
 
 
