@@ -80,3 +80,13 @@ echo 'DONE'
 echo 'FINISHED SETTING UP DOTFILES'
 #sleep 5
 exit
+
+
+# If this user's login shell is not zsh run zsh
+if [ "$(basename -- "$SHELL")" != "zsh" ]; then
+    echo 'SWITHING TO ZSH'
+    zsh
+else;
+    echo 'RUNNING .zshrc'
+    source ~/.zshrc
+fi
