@@ -5,7 +5,8 @@ chsh -s zsh
 echo 'Installing powerlevel10k'
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 touch $HOME/.zshrc $HOME/.p10k.zsh
-cp -rf dots/*.zsh* $HOME/
+cp -rf dots/.zshrc $HOME/.zshrc
+cp -rf dots/.p10k.zsh $HOME/.p10k.zsh
 echo 'Powerlevel10k installed'
 
 
