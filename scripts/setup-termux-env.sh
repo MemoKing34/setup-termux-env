@@ -19,8 +19,8 @@ echo 'DONE'
 
 #Install ngrok
 echo 'INSTALLING NGROK'
-git clone https://github.com/Yisus7u7/termux-ngrok.git -q
-bash termux-ngrok/install.sh
+git clone https://github.com/Yisus7u7/termux-ngrok.git ~/termux-ngrok -q
+bash ~/termux-ngrok/install.sh
 echo 'DONE'
 
 
