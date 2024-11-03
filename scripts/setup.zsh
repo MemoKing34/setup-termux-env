@@ -1,6 +1,12 @@
-test -d .oh-my-zsh || rm -rf .oh-my-zsh || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+if [[ $(test -d ~/.oh-my-zsh) ]]; then
+    echo 'Oh my zsh already installed!'
+else
+    rm -rf ~/.oh-my-zsh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+fi
+
 if [ "$(basename -- "$SHELL")" != "zsh" ]; then
-    chsh -s zsh
+    chsh -s $(which zsh)
 fi
 
 
