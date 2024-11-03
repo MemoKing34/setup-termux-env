@@ -86,7 +86,7 @@ exit
 if [ "$(basename -- "$SHELL")" != "zsh" ]; then
     echo 'SWITHING TO ZSH'
     zsh
-else;
+else
     echo 'RUNNING .zshrc'
     source ~/.zshrc
 fi

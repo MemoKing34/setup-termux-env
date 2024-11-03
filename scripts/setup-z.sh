@@ -10,7 +10,7 @@ echo 'Installing powerlevel10k'
 if [[test -d "$THEMES/powerlevel10k"]]; then
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $THEMES/powerlevel10k
     echo 'Powerlevel10k installed'
-else;
+else
     echo 'Powerlevel10k already installed!'
 fi
 echo 'Setting p10k dotfiles'
