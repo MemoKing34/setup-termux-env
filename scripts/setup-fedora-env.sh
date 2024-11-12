@@ -10,7 +10,7 @@ sudo firewall-cmd --add-service=ssh --permanent
 sudo firewall-cmd --reload
 sudo systemctl enable --now  tlp
 sudo systemctl enable --now snapd.socket
-sudo ln -s /var/lib/snapd/snap /snap
+sudo ln -s /var/lib/snapd/snap /
 sudo snap install code thunderbird pycharm-community 
 flatpak install flathub io.github.zen_browser.zen
 
