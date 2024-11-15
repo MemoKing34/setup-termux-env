@@ -82,6 +82,10 @@ echo 'FINISHED SETTING UP DOTFILES'
 exit
 
 
+echo 'Adding setup-pointless-repo'
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/its-pointless/its-pointless.github.io/refs/heads/master/setup-pointless-repo.sh)"
+echo 'Done!'
+
 # If this user's login shell is not zsh run zsh
 if [ "$(basename -- "$SHELL")" != "zsh" ]; then
     echo 'SWITHING TO ZSH'
