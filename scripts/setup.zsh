@@ -40,3 +40,10 @@ test -d "$PLUGINS/zsh-syntax-highlighting" || git clone https://github.com/zsh-u
 test -d "$PLUGINS/you-should-use" || git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $PLUGINS/you-should-use -q
 test -d "$PLUGINS/zsh-bat" || git clone https://github.com/fdellwing/zsh-bat.git $PLUGINS/zsh-bat -q
 echo 'Extra plugins installed'
+
+echo 'Setting oh my zsh! configs'
+source ~/.zshrc
+omz reload
+omz plugins enable python vscode pip pyenv zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-bat
+omz theme set powerlevel10k/powerlevel10k
+echo 'Oh my zsh setted =)'
