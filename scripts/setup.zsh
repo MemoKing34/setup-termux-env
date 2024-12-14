@@ -32,18 +32,27 @@ else
 fi
 
 
+install_plugin() {
+    test -d "$PLUGINS/$2" || git clone https://github.com/$1/$2.git $PLUGINS/$2 -q && _omz::plugin::enable $2
+}
 
-
-echo 'Installing extra plugins for oh my zsh (zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-bat)'
-test -d "$PLUGINS/zsh-autosuggestions" || git clone https://github.com/zsh-users/zsh-autosuggestions $PLUGINS/zsh-autosuggestions -q
-test -d "$PLUGINS/zsh-syntax-highlighting" || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $PLUGINS/zsh-syntax-highlighting -q
-test -d "$PLUGINS/you-should-use" || git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $PLUGINS/you-should-use -q
-test -d "$PLUGINS/zsh-bat" || git clone https://github.com/fdellwing/zsh-bat.git $PLUGINS/zsh-bat -q
-echo 'Extra plugins installed'
 
 echo 'Setting oh my zsh! configs'
 source ~/.zshrc
-omz reload
-omz plugins enable python vscode pip pyenv zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-bat
-omz theme set powerlevel10k/powerlevel10k
+
+_omz::plugin::enable python vscode pip pyenv # zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-bat
+_omz::theme::set powerlevel10k/powerlevel10k
+
+echo 'Installing extra plugins for oh my zsh (zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-bat)'
+install_plugin zsh-users zsh-autosuggestions
+install_plugin zsh-users zsh-syntax-highlighting
+install_plugin MichaelAquilina zsh-you-should-use
+install_plugin fdellwing zsh-bat
+#test -d "$PLUGINS/zsh-autosuggestions" || git clone https://github.com/zsh-users/zsh-autosuggestions $PLUGINS/zsh-autosuggestions -q
+#test -d "$PLUGINS/zsh-syntax-highlighting" || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $PLUGINS/zsh-syntax-highlighting -q
+#test -d "$PLUGINS/you-should-use" || git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $PLUGINS/you-should-use -q
+#test -d "$PLUGINS/zsh-bat" || git clone https://github.com/fdellwing/zsh-bat.git $PLUGINS/zsh-bat -q
+echo 'Extra plugins installed'
+
+#_omz::reload
 echo 'Oh my zsh setted =)'
