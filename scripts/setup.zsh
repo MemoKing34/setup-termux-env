@@ -1,4 +1,4 @@
-if [[ $(test -d ~/.oh-my-zsh) ]]; then
+if test -d ~/.oh-my-zsh; then
     echo 'Oh my zsh already installed!'
 else
     rm -rf ~/.oh-my-zsh
