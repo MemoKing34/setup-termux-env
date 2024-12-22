@@ -17,16 +17,16 @@ apt install -qqy --no-install-recommends bash-completion linux-man-pages man neo
 echo 'DONE'
 #sleep 2
 
-#Install ngrok
-echo 'INSTALLING NGROK'
-git clone https://github.com/Yisus7u7/termux-ngrok.git ~/termux-ngrok -q
-bash ~/termux-ngrok/install.sh
-echo 'DONE'
-
-
 #Set zsh and oh-my-zsh
 echo 'INSTALLING ZSH AND OH MY ZSH!'
 bash scripts/setup.zsh
+echo 'DONE'
+
+
+#Install ngrok
+echo 'INSTALLING NGROK'
+git clone https://github.com/Yisus7u7/termux-ngrok.git ~/termux-ngrok -q
+cd ~/termux-ngrok && bash install.sh && zsh install.zsh
 echo 'DONE'
 
 
