@@ -43,7 +43,7 @@ source ~/.zshrc
 _omz::plugin::enable python vscode pip pyenv zsh-interactive-cd   # zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-bat
 _omz::theme::set powerlevel10k/powerlevel10k
 
-echo 'Installing extra plugins for oh my zsh (zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-bat)'
+echo 'Installing extra plugins for oh my zsh'
 install_plugin zsh-users zsh-autosuggestions
 install_plugin zsh-users zsh-syntax-highlighting
 install_plugin MichaelAquilina zsh-you-should-use
