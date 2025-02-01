@@ -40,7 +40,7 @@ install_plugin() {
 echo 'Setting oh my zsh! configs'
 source ~/.zshrc
 
-_omz::plugin::enable python vscode pip pyenv zsh-interactive-cd   # zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-bat
+_omz::plugin::enable python vscode pip pyenv zsh-interactive-cd
 _omz::theme::set powerlevel10k/powerlevel10k
 
 echo 'Installing extra plugins for oh my zsh'
@@ -49,11 +49,7 @@ install_plugin zsh-users zsh-syntax-highlighting
 install_plugin MichaelAquilina zsh-you-should-use
 install_plugin fdellwing zsh-bat
 install_plugin TamCore autoupdate-oh-my-zsh-plugins
-#test -d "$PLUGINS/zsh-autosuggestions" || git clone https://github.com/zsh-users/zsh-autosuggestions $PLUGINS/zsh-autosuggestions -q
-#test -d "$PLUGINS/zsh-syntax-highlighting" || git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $PLUGINS/zsh-syntax-highlighting -q
-#test -d "$PLUGINS/you-should-use" || git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $PLUGINS/you-should-use -q
-#test -d "$PLUGINS/zsh-bat" || git clone https://github.com/fdellwing/zsh-bat.git $PLUGINS/zsh-bat -q
 echo 'Extra plugins installed'
 
-#_omz::reload
+
 echo 'Oh my zsh setted =)'
