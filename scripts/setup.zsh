@@ -1,4 +1,4 @@
-if test -d ~/.oh-my-zsh; then
+if [[ -d ~/.oh-my-zsh ]]; then
     echo 'Oh my zsh already installed!'
 else
     rm -rf ~/.oh-my-zsh
@@ -15,7 +15,7 @@ export PLUGINS=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins
 
 
 echo 'Installing powerlevel10k'
-if [[ $(test -d $THEMES/powerlevel10k) ]]; then
+if [[ -d $THEMES/powerlevel10k ]]; then
     echo 'Powerlevel10k already installed!'
 else
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $THEMES/powerlevel10k -q
@@ -23,7 +23,7 @@ else
 fi
 echo 'Setting p10k dotfiles'
 touch ~/.zshrc ~/.p10k.zsh
-if [[ $(test -d dots) ]]; then
+if [[ -d dots ]]; then
     cp -rf dots/.zshrc ~/.zshrc
     cp -rf dots/.p10k.zsh ~/.p10k.zsh
 else
