@@ -33,7 +33,7 @@ fi
 
 
 install_plugin() {
-    test -d "$PLUGINS/$2" || git clone https://github.com/$1/$2.git $PLUGINS/$2 -q && _omz::plugin::enable $2
+    test -d "$PLUGINS/${3:-$2}" || git clone https://github.com/$1/$2.git $PLUGINS/${3:-$2} -q && _omz::plugin::enable ${3:-$2}
 }
 
 
@@ -48,7 +48,7 @@ install_plugin zsh-users zsh-autosuggestions
 install_plugin zsh-users zsh-syntax-highlighting
 install_plugin MichaelAquilina zsh-you-should-use
 install_plugin fdellwing zsh-bat
-install_plugin TamCore autoupdate-oh-my-zsh-plugins
+install_plugin TamCore autoupdate-oh-my-zsh-plugins autoupdate
 echo 'Extra plugins installed'
 
 
