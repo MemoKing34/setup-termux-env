@@ -40,7 +40,7 @@ install_plugin() {
 echo 'Setting oh my zsh! configs'
 source ~/.zshrc
 
-_omz::plugin::enable python vscode pip pyenv zsh-interactive-cd example
+_omz::plugin::enable python vscode pip pyenv zsh-interactive-cd
 _omz::theme::set powerlevel10k/powerlevel10k
 
 echo 'Installing extra plugins for oh my zsh'
@@ -49,7 +49,10 @@ install_plugin zsh-users zsh-syntax-highlighting
 install_plugin MichaelAquilina zsh-you-should-use
 install_plugin fdellwing zsh-bat
 install_plugin TamCore autoupdate-oh-my-zsh-plugins autoupdate
+install_plugin MemoKing34 zsh-lsd
 echo 'Extra plugins installed'
 
+
+_omz::plugin::enable example # this is for applying your custom settings
 
 echo 'Oh my zsh setted =)'
