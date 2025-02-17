@@ -114,7 +114,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias diff='diff --color=always'
-alias ls='ls -Ap --color=always'
+alias ls='lsd -A --color=always'
 alias less='less -RNs --use-color'
 alias grep='grep --color=always'
 alias jobs='jobs -l'
