@@ -30,4 +30,11 @@ sudo snap install code thunderbird pycharm-community
 echo 'Installing zen browser from flathub' 
 flatpak install flathub io.github.zen_browser.zen
 
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/MemoKing34/setup-termux-env/refs/heads/master/scripts/setup.zsh)"
+if [[ -f setup.zsh ]]; then
+    zsh setup.zsh
+else
+    zsh -c "$(curl -fsSL https://raw.githubusercontent.com/MemoKing34/setup-termux-env/refs/heads/master/scripts/setup.zsh)"
+fi
+
+
+echo "Fedora setup done =)"
