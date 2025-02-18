@@ -88,7 +88,7 @@ echo 'Done!'
 
 # If this user's login shell is not zsh run zsh
 if [ "$(basename -- "$SHELL")" != "zsh" ]; then
-    echo 'SWITHING TO ZSH'
+    echo 'SWITCHING TO ZSH'
     zsh
 else
     echo 'RUN  source ~/.zshrc to apply changes'

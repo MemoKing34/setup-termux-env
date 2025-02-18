@@ -6,7 +6,11 @@ else
 fi
 
 if [ "$(basename -- "$SHELL")" != "zsh" ]; then
-    chsh -s $(which zsh)
+    if [ -n "$TERMUX_VERSION" ]; then
+        chsh -s zsh
+    else
+        chsh -s $(which zsh)
+    fi
 fi
 
 
