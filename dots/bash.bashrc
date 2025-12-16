@@ -52,6 +52,12 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+# Clear Cache (Requires Root Access)
+
+clear_cache ()
+{
+su -c "pm trim-caches 999999999999999999"
+}
 
 #Don't clear The Screen
 #clear
