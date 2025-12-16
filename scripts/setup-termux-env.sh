@@ -26,7 +26,8 @@ echo 'DONE'
 #Install ngrok
 echo 'INSTALLING NGROK'
 git clone https://github.com/Yisus7u7/termux-ngrok.git ~/termux-ngrok -q
-cd ~/termux-ngrok && bash install.sh && zsh install.sh
+WORKDIR=$PWD
+cd ~/termux-ngrok && bash install.sh && zsh install.sh && cd $WORKDIR
 echo 'DONE'
 
 
