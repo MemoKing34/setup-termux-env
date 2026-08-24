@@ -1,7 +1,7 @@
-if [[ -d ~/.oh-my-zsh ]]; then
+if [[ -d $HOME/.oh-my-zsh ]]; then
     echo 'Oh my zsh already installed!'
 else
-    rm -rf ~/.oh-my-zsh
+    rm -rf $HOME/.oh-my-zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 fi
 
@@ -13,7 +13,7 @@ if [ "$(basename -- "$SHELL")" != "zsh" ]; then
     fi
 fi
 
-[[ -n "$ZSH_CUSTOM" ]] || ZSH_CUSTOM="~/.oh-my-zsh/custom"
+[[ -n "$ZSH_CUSTOM" ]] || ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 export THEMES=$ZSH_CUSTOM/themes
 export PLUGINS=$ZSH_CUSTOM/plugins
 
@@ -28,13 +28,13 @@ fi
 echo 'Setting p10k dotfiles'
 #touch ~/.zshrc ~/.p10k.zsh
 if [[ -d dots ]]; then
-    cp -rf dots/.zshrc ~/.zshrc
-    cp -rf dots/.p10k.zsh ~/.p10k.zsh
+    cp -rf dots/.zshrc $HOME/.zshrc
+    cp -rf dots/.p10k.zsh $HOME/.p10k.zsh
     cp -rf dots/postinit.zsh $ZSH_CUSTOM/postinit.zsh
     cp -rf dots/preinit $PLUGINS/preinit -v
 else
-    curl -fsSL https://raw.githubusercontent.com/MemoKing34/setup-termux-env/refs/heads/master/dots/.zshrc -o ~/.zshrc
-    curl -fsSL https://raw.githubusercontent.com/MemoKing34/setup-termux-env/refs/heads/master/dots/.p10k.zsh -o ~/.p10k.zsh
+    curl -fsSL https://raw.githubusercontent.com/MemoKing34/setup-termux-env/refs/heads/master/dots/.zshrc -o $HOME/.zshrc
+    curl -fsSL https://raw.githubusercontent.com/MemoKing34/setup-termux-env/refs/heads/master/dots/.p10k.zsh -o $HOME/.p10k.zsh
     curl -fsSL https://raw.githubusercontent.com/MemoKing34/setup-termux-env/refs/heads/master/dots/postinit.zsh -o $ZSH_CUSTOM/postinit.zsh
     curl -fsSL https://raw.githubusercontent.com/MemoKing34/setup-termux-env/refs/heads/master/dots/preinit/preinit.plugin.zsh --create-dirs -o $PLUGINS/preinit/preinit.plugin.zsh
 fi
@@ -46,9 +46,10 @@ install_plugin() {
 
 
 echo 'Setting oh my zsh! configs'
-source ~/.zshrc
+source $HOME/.zshrc
 
-_omz::plugin::enable example # this is for applying your custom settings
+# _omz::plugin::enable example # this is for applying your custom settings
+# not needed anymore
 
 _omz::plugin::enable python vscode pip fzf eza
 _omz::theme::set powerlevel10k/powerlevel10k
