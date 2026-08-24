@@ -13,9 +13,9 @@ if [ "$(basename -- "$SHELL")" != "zsh" ]; then
     fi
 fi
 
-
-export THEMES=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes
-export PLUGINS=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins
+[[ -n "$ZSH_CUSTOM" ]] || ZSH_CUSTOM="~/.oh-my-zsh/custom"
+export THEMES=$ZSH_CUSTOM/themes
+export PLUGINS=$ZSH_CUSTOM/plugins
 
 
 echo 'Installing powerlevel10k'
@@ -26,13 +26,17 @@ else
     echo 'Powerlevel10k installed'
 fi
 echo 'Setting p10k dotfiles'
-touch ~/.zshrc ~/.p10k.zsh
+#touch ~/.zshrc ~/.p10k.zsh
 if [[ -d dots ]]; then
     cp -rf dots/.zshrc ~/.zshrc
     cp -rf dots/.p10k.zsh ~/.p10k.zsh
+    cp -rf dots/postinit.zsh $ZSH_CUSTOM/postinit.zsh
+    cp -rf dots/preinit $PLUGINS/preinit -v
 else
     curl -fsSL https://raw.githubusercontent.com/MemoKing34/setup-termux-env/refs/heads/master/dots/.zshrc -o ~/.zshrc
     curl -fsSL https://raw.githubusercontent.com/MemoKing34/setup-termux-env/refs/heads/master/dots/.p10k.zsh -o ~/.p10k.zsh
+    curl -fsSL https://raw.githubusercontent.com/MemoKing34/setup-termux-env/refs/heads/master/dots/postinit.zsh -o $ZSH_CUSTOM/postinit.zsh
+    curl -fsSL https://raw.githubusercontent.com/MemoKing34/setup-termux-env/refs/heads/master/dots/preinit/preinit.plugin.zsh --create-dirs -o $PLUGINS/preinit/preinit.plugin.zsh
 fi
 
 
@@ -46,7 +50,7 @@ source ~/.zshrc
 
 _omz::plugin::enable example # this is for applying your custom settings
 
-_omz::plugin::enable python vscode pip pyenv zsh-interactive-cd
+_omz::plugin::enable python vscode pip fzf eza
 _omz::theme::set powerlevel10k/powerlevel10k
 
 echo 'Installing extra plugins for oh my zsh'

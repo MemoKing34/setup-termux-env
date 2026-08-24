@@ -17,17 +17,13 @@ sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=Pack
 sudo dnf groupupdate sound-and-video
 
 echo 'Installing additional packages'
-sudo dnf install neofetch git kde-partitionmanager tlp tlp-rdw snapd zsh -y --skip-unavailable --skip-broken
+sudo dnf install fastfetch git kde-partitionmanager tlp tlp-rdw zsh -y --skip-unavailable --skip-broken
 
-echo 'Enabling  tlp and snap services'
+echo 'Enabling  tlp service'
 sudo systemctl enable --now  tlp
-sudo systemctl enable --now snapd.socket
 
-echo 'Setting snap'
-sudo ln -s /var/lib/snapd/snap /
-echo 'Installing additional snap packages'
-sudo snap install code thunderbird pycharm-community
-echo 'Installing zen browser from flathub' 
+
+echo 'Installing zen browser from flathub'
 flatpak install flathub io.github.zen_browser.zen
 
 if [[ -f setup.zsh ]]; then

@@ -13,7 +13,7 @@ echo 'DONE'
 #Install Our Packages
 #Bare Minimum List
 echo 'INSTALLING NECESSARY PACKAGES...'
-apt install -qqy --no-install-recommends bash-completion linux-man-pages man neofetch fastfetch texinfo wget zsh vim termux-api figlet which ncurses-utils
+apt install -qqy --no-install-recommends bash-completion linux-man-pages man fastfetch texinfo wget zsh vim termux-api figlet which ncurses-utils jq
 echo 'DONE'
 #sleep 2
 
@@ -53,14 +53,6 @@ echo 'DONE'
 echo 'SETTING UP BASHRC...'
 #sleep 2
 cp -rf dots/bash.bashrc $PREFIX/etc/bash.bashrc
-echo 'DONE'
-
-#Set Up Neofetch
-echo 'SETTING UP NEOFETCH...'
-#sleep 2
-mkdir -p $HOME/.config/neofetch
-touch $HOME/.config/neofetch/config.conf
-cp -rf dots/config.conf $HOME/.config/neofetch/config.conf
 echo 'DONE'
 
 #Set Up Termux Extra Keys
