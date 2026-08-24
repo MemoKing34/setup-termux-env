@@ -31,7 +31,7 @@ if [[ -d dots ]]; then
     cp -rf dots/.zshrc $HOME/.zshrc
     cp -rf dots/.p10k.zsh $HOME/.p10k.zsh
     cp -rf dots/postinit.zsh $ZSH_CUSTOM/postinit.zsh
-    cp -rf dots/preinit $PLUGINS/preinit -v
+    cp -rf dots/preinit $PLUGINS/preinit
 else
     curl -fsSL https://raw.githubusercontent.com/MemoKing34/setup-termux-env/refs/heads/master/dots/.zshrc -o $HOME/.zshrc
     curl -fsSL https://raw.githubusercontent.com/MemoKing34/setup-termux-env/refs/heads/master/dots/.p10k.zsh -o $HOME/.p10k.zsh
