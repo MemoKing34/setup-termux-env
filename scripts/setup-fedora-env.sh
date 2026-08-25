@@ -17,7 +17,7 @@ sudo dnf groupupdate multimedia --setop="install_weak_deps=False" --exclude=Pack
 sudo dnf groupupdate sound-and-video
 
 echo 'Installing additional packages'
-sudo dnf install fastfetch git kde-partitionmanager tlp tlp-rdw zsh -y --skip-unavailable --skip-broken
+sudo dnf install fastfetch git kde-partitionmanager tlp tlp-rdw zsh fzf eza -y --skip-unavailable --skip-broken
 
 echo 'Enabling  tlp service'
 sudo systemctl enable --now  tlp

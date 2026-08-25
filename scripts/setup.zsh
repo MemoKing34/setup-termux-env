@@ -60,7 +60,8 @@ install_plugin zsh-users zsh-syntax-highlighting
 install_plugin MichaelAquilina zsh-you-should-use
 install_plugin fdellwing zsh-bat
 install_plugin TamCore autoupdate-oh-my-zsh-plugins autoupdate
-install_plugin MemoKing34 zsh-lsd
+# install_plugin MemoKing34 zsh-lsd
+# I use eza now
 echo 'Extra plugins installed'
 
 
