@@ -13,7 +13,7 @@ echo 'DONE'
 #Install Our Packages
 #Bare Minimum List
 echo 'INSTALLING NECESSARY PACKAGES...'
-apt install -qqy --no-install-recommends bash-completion linux-man-pages man fastfetch texinfo wget zsh vim termux-api figlet which ncurses-utils jq fzf eza
+apt install -qqy --no-install-recommends bash-completion linux-man-pages man fastfetch texinfo wget zsh vim termux-api figlet which ncurses-utils jq fzf eza bat
 echo 'DONE'
 #sleep 2
 
@@ -27,7 +27,7 @@ echo 'DONE'
 echo 'INSTALLING NGROK'
 git clone https://github.com/Yisus7u7/termux-ngrok.git ~/termux-ngrok -q
 WORKDIR=$PWD
-cd ~/termux-ngrok && bash install.sh && zsh install.sh && cd $WORKDIR
+cd ~/termux-ngrok && bash install.sh && cd "$WORKDIR"
 echo 'DONE'
 
 
@@ -58,26 +58,21 @@ echo 'DONE'
 #Set Up Termux Extra Keys
 echo 'SETTING UP EXTRA KEYS...'
 #sleep 2
+mkdir -p $HOME/.termux
 cp -rf dots/termux.properties $HOME/.termux/termux.properties
+termux-reload-settings
 echo 'DONE'
 
 #Set Up Boot Scripts
 echo 'SETTING UP BOOT SCRIPTS...'
 #sleep 2
 mkdir -p $HOME/.termux/boot
-touch $HOME/.termux/boot/clear_cache.sh
 cp -rf dots/clear_cache.sh $HOME/.termux/boot/clear_cache.sh
 echo 'DONE'
 
 #sleep 5
 echo 'FINISHED SETTING UP DOTFILES'
 #sleep 5
-exit
-
-
-echo 'Adding setup-pointless-repo'
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/its-pointless/its-pointless.github.io/refs/heads/master/setup-pointless-repo.sh)"
-echo 'Done!'
 
 # If this user's login shell is not zsh run zsh
 if [ "$(basename -- "$SHELL")" != "zsh" ]; then
