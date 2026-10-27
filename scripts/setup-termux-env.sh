@@ -43,12 +43,6 @@ echo 'DONE'
 # Set Up Dotfiles
 echo 'SETTING UP DOTFILES...'
 
-#Remove Termux Motd
-echo 'REMOVING TERMUX MOTD...'
-#sleep 2
-rm -rf $PREFIX/etc/motd
-echo 'DONE'
-
 # Set Up Bashrc
 echo 'SETTING UP BASHRC...'
 #sleep 2
